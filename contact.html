@@ -31,22 +31,30 @@
         <div id="bodyContent">
             <section id="mainContent">
                 <h1>Contact</h1>
-                <div class="picSection">
-                    <div class="thumbnail left">
-                        <img src="" alt="">
-                        <p class="label"></p>
-                    </div>
-                    <div class="thumbnail right">
-                        <img src="" alt="">
-                        <p class="label"></p>
-                    </div>
-                </div>
+                <form>
+                    <label for="name">Name</label><br>
+                    <input type="text" name="name" placeholder="Your Name"><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" placeholder="example@yahoo.com"><br>
+                    <label for="message">Message</label><br>
+                    <textarea name="message" id="myTextArea" cols="30" rows="10"></textarea><br>
+                    <input id="submitButton" type="submit" value="Submit">
+                </form>
             </section>
             <section id="sideBar">
                 <h2>Connect With Me</h2>
-                <div id="gitHubIcon" class="socialIcon"></div>
-                <div id="linkedinIcon" class="socialIcon"></div>
-                <div id="stackIcon" class="socialIcon"></div>
+                <a href="https://github.com/amcnulty" class="socialIcon">
+                    <div id="gitHubIconTop"></div>
+                    <div id="gitHubIcon"></div>
+                </a>
+                <a href="https://www.linkedin.com/in/aaron-mcnulty-64008183/"  class="socialIcon">
+                    <div id="linkedinIconTop"></div>
+                    <div id="linkedinIcon"></div>
+                </a>
+                <a href="https://stackoverflow.com/users/8456358/amcnulty88?tab=profile"  class="socialIcon">
+                    <div id="stackIconTop"></div>
+                    <div id="stackIcon"></div>
+                </a>
             </section>
         </div>
         <div class="push"></div>

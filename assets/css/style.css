@@ -1,11 +1,17 @@
 html {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../images/background/background.png");
 }
 
 #content {
     min-height: 100vh;
     margin: 0 auto -88px;
+}
+
+#content::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 header {
@@ -27,6 +33,7 @@ h1, h2 {
 h1 {
     font-size: 2em;
     padding-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -80,13 +87,97 @@ nav {
     margin: 0 auto;
 }
 
+#bodyContent::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 #mainContent {
     width: 590px;
     padding: 40px 30px 40px 30px;
+    margin-bottom: 50px;
     background-color: white;
     box-shadow: 4px 4px 15px 2px #333333;
     float: left;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+#mainContent p {
+    margin: 16px 0px 16px 0px;
+    text-indent: 30px;
+}
+
+/* The following styles are specific to the about me page */
+#profilePic {
+    width: 240px;
+    height: 240px;
+    float: left;
+    margin: 0px 20px 10px 0px;
+}
+
+/* The following styles are specific to the portfolio page */
+.thumbnail {
+    position: relative;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: all .8s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.thumbnail img {
+    max-width: 270px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.label {
+    position: absolute;
+    bottom: 20px;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    background-color: rgba(74, 170, 165, .7);
+}
+
+/* The following styles are specific to the contact us page */
+textarea {
+    resize: none;
+    width: calc(100% - 20px);
+    font-size: 1em;
+    padding: 5px 5px 5px 15px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 5px 5px 5px 15px;
+    font-size: .8em;
+}
+
+#submitButton {
+    background-color: #4aaaa5;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    width: auto;
+    padding: 8px 16px 8px 16px;
+    cursor: pointer;
 }
 
 #sideBar {
@@ -97,39 +188,75 @@ nav {
     float: right;
 }
 
+#sideBar a {
+    text-decoration: none;
+}
+
 .socialIcon {
     display: inline-block;
     width: 60px;
     height: 60px;
     margin-top: 20px;
-    cursor: pointer;
+}
+
+.socialIcon div {
+    width: 60px;
+    height: 60px;
+}
+
+#gitHubIconTop {
+    position: absolute;
+    background-image: url("../images/icon/github_black.png");
+    background-size: contain;
+    transition: opacity .3s ease;
 }
 
 #gitHubIcon {
-    background-image: url("../images/icon/github_black.png");
-    background-size: contain;
-}
-
-#gitHubIcon:hover {
     background-image: url("../images/icon/github_red.png");
     background-size: contain;
 }
 
-#linkedinIcon {
-    margin: 0px 10px 0px 10px;
-    background-image: url("../images/icon/linkedin_black.png");
-    background-size: contain;
+#gitHubIconTop:hover {
+    opacity: 0;
 }
 
-#linkedinIcon:hover {
+#linkedinIconTop {
+    margin: 0px 10px 0px 10px;
+    position: absolute;
+    background-image: url("../images/icon/linkedin_black.png");
+    background-size: contain;
+    transition: opacity .3s ease;
+}
+
+#linkedinIcon {
     margin: 0px 10px 0px 10px;
     background-image: url("../images/icon/linkedin_red.png");
     background-size: contain;
 }
 
-#stackIcon {
+#linkedinIconTop:hover {
+    opacity: 0;
+}
+
+#stackIconTop {
+    position: absolute;
+    transform: translateX(20px);
     background-image: url("../images/icon/stackoverflow_black.png");
     background-size: contain;
+    transition: opacity .3s ease;
+    z-index: 1;
+}
+
+#stackIcon {
+    position: relative;
+    right: -20px;
+    background-image: url("../images/icon/stackoverflow_red.png");
+    background-size: contain;
+    z-index: 0;
+}
+
+#stackIconTop:hover {
+    opacity: 0;
 }
 
 #stackIcon:hover {
